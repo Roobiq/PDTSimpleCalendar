@@ -404,8 +404,9 @@ static NSString *PDTSimpleCalendarViewHeaderIdentifier = @"com.producteev.collec
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat itemWidth = floorf(CGRectGetWidth(self.collectionView.bounds) / self.daysPerWeek);
-
-    return CGSizeMake(itemWidth, itemWidth);
+    CGFloat itemHeight = itemWidth > 45 ? 45.f : itemWidth;
+    
+    return CGSizeMake(itemWidth, itemHeight);
 }
 
 #pragma mark - UIScrollViewDelegate
